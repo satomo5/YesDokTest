@@ -2,14 +2,11 @@
   <div class="page min-h-screen">
     <Navbar />
     <div class="content w-full mx-auto pt-10 pb-10 px-6">
-      <div class="flex justify-between items-center">
-        <div v-if="!isSearch" class="text-3xl font-semibold">
-          Artikel Terpopuler
-        </div>
-        <Search />
+      <div class="mb-3 text-3xl font-semibold capitalize">
+        {{ $route.params.category }}
       </div>
-      <div class="border-t border-gray-300 mt-2 mb-5"></div>
-      <div v-if="article.length > 0">
+      <div class="border-t border-gray-300 mb-5"></div>
+      <div>
         <NuxtLink
           v-for="item in article"
           :key="item.id"
@@ -22,23 +19,6 @@
           <CardArticle :data="item" />
         </NuxtLink>
       </div>
-      <div v-else>
-        <div
-          class="
-            rounded-lg
-            overflow-hidden
-            border border-gray-300
-            bg-white
-            text-center
-            py-12
-            text-2xl
-            font-semibold
-            opacity-40
-          "
-        >
-          Data tidak ditemukan!
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -49,29 +29,26 @@ import { mapState } from 'vuex'
 export default {
   head() {
     return {
-      title: 'Yesdok Article',
+      title: `Kategori ${this.$route.params.category} - Yesdok Article`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Cari berita apapun disini.',
+          content: `Artikel ${this.$route.params.category} - Temukan artikel menarik lainnya disini`,
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: `yesdok, artikel,${this.$store.state.keyword.map((item) => {
-            return ` ${item}`
-          })}`,
+          content: `yesdok, artikel, ${this.$route.params.category}`,
         },
       ],
     }
   },
   computed: {
-    ...mapState(['article', 'keyword', 'isSearch']),
+    ...mapState(['article']),
   },
   beforeCreate() {
-    this.$store.commit('getArticle')
-    this.$store.commit('getKeywords')
+    this.$store.commit('getArticleByCategory', this.$route.params.category)
   },
   methods: {
     slug(val) {
