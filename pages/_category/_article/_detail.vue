@@ -81,12 +81,57 @@ import { mapState } from 'vuex'
 export default {
   head() {
     return {
-      title: this.$store.state.article.title,
+      title: this.$store.state.article.title + ' - Yesdok Artikel',
       meta: [
+        {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          content: 'Yesdok Artikel',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.$store.state.article.title + ' - Yesdok Artikel',
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.$store.state.article.image,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: `Artikel ${this.$route.params.category} - Temukan artikel menarik lainnya disini`,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: this.$store.state.site + this.$route.fullPath,
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.$store.state.article.thumb_description,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.$store.state.site + this.$route.fullPath,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.$store.state.article.thumb_description,
+        },
+        {
+          hid: 'author',
+          name: 'author',
+          content: this.$store.state.article.author,
+        },
         {
           hid: 'description',
           name: 'description',
-          content: this.$store.state.article.description,
+          content: this.$store.state.article.thumb_description,
         },
         {
           hid: 'keywords',

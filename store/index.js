@@ -6,6 +6,7 @@ export const state = () => ({
   keyword: null,
   isSearch: false,
   width: null,
+  site: 'artikel.yesdok.com'
 })
 
 export const mutations = {

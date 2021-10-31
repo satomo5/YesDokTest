@@ -49,12 +49,57 @@ import { mapState } from 'vuex'
 export default {
   head() {
     return {
-      title: 'Yesdok Article',
+      title: 'Yesdok Artikel',
       meta: [
+        {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          content: 'Yesdok Artikel',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: 'Yesdok Artikel',
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://www.yesdok.com/visual/slideshow/screen shot 2021-10-30 at 8.35.42 am-article-1635558753.png',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'Cari berita apapun disini. Yesdok Artikel',
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: this.$store.state.site,
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Yesdok Artikel',
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://www.yesdok.com/visual/slideshow/screen shot 2021-10-30 at 8.35.42 am-article-1635558753.png',
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Cari berita apapun disini. Yesdok Artikel',
+        },
+        {
+          hid: 'apple-mobile-web-app-title',
+          name: 'apple-mobile-web-app-title',
+          content: 'Yesdok Artikel',
+        },
         {
           hid: 'description',
           name: 'description',
-          content: 'Cari berita apapun disini.',
+          content: 'Cari berita apapun disini. Yesdok Artikel',
         },
         {
           hid: 'keywords',
@@ -67,7 +112,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['article', 'keyword', 'isSearch']),
+    ...mapState(['article', 'keyword', 'isSearch', 'site']),
   },
   beforeCreate() {
     this.$store.commit('getArticle')

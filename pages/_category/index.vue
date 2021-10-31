@@ -29,8 +29,50 @@ import { mapState } from 'vuex'
 export default {
   head() {
     return {
-      title: `Kategori ${this.$route.params.category} - Yesdok Article`,
+      title: `Kategori ${this.$route.params.category} - Yesdok Artikel`,
       meta: [
+        {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          content: 'Yesdok Artikel',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `Kategori ${this.$route.params.category} - Yesdok Artikel`,
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content:
+            'https://www.yesdok.com/visual/slideshow/screen shot 2021-10-30 at 8.35.42 am-article-1635558753.png',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: `Artikel ${this.$route.params.category} - Temukan artikel menarik lainnya disini`,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: this.$store.state.site + this.$route.fullPath,
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: `Kategori ${this.$route.params.category} - Yesdok Artikel`,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content:
+            'https://www.yesdok.com/visual/slideshow/screen shot 2021-10-30 at 8.35.42 am-article-1635558753.png',
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: `Artikel ${this.$route.params.category} - Temukan artikel menarik lainnya disini`,
+        },
         {
           hid: 'description',
           name: 'description',
