@@ -1,8 +1,8 @@
 <template>
   <div class="rounded-lg overflow-hidden border border-gray-300 bg-white mb-6">
-    <div class="flex">
-      <div class="img-card flex justify-center items-center overflow-hidden">
-        <img class="h-full" :src="data.image" alt="" srcset="" />
+    <div class="flex flex-col sm:flex-row">
+      <div class="img-card w-full flex justify-center items-center overflow-hidden">
+        <img class="w-full sm:w-auto" :src="data.image" alt="" srcset="" />
       </div>
       <div class="p-4">
         <div class="card-category opacity-40">{{ data.category }}</div>

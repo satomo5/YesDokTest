@@ -74,6 +74,11 @@ export default {
           content: `Artikel ${this.$route.params.category} - Temukan artikel menarik lainnya disini`,
         },
         {
+          hid: 'apple-mobile-web-app-title',
+          name: 'apple-mobile-web-app-title',
+          content: 'Yesdok Artikel',
+        },
+        {
           hid: 'description',
           name: 'description',
           content: `Artikel ${this.$route.params.category} - Temukan artikel menarik lainnya disini`,

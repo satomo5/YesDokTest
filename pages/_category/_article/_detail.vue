@@ -116,12 +116,17 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.$store.state.site + this.$route.fullPath,
+          content:  this.$store.state.article.image,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           content: this.$store.state.article.thumb_description,
+        },
+        {
+          hid: 'apple-mobile-web-app-title',
+          name: 'apple-mobile-web-app-title',
+          content: 'Yesdok Artikel',
         },
         {
           hid: 'author',

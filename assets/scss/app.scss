@@ -1,7 +1,71 @@
+* {
+  font-size: 14px;
+}
+
 .navigation {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.page {
+  padding-top: 60px;
+
+  .content {
+    max-width: 1100px;
+
+    .img-card {
+      min-width: 285px;
+      width: 285px;
+      height: 200px;
+    }
+
+    .img-card img {
+      max-width: unset;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 25px;
+    }
+
+    .description h4 {
+      font-size: 18px;
+      font-weight: 500;
+      padding-top: 15px;
+    }
+
+    .description h4 {
+      font-size: 18px;
+      font-weight: 500;
+      padding-top: 15px;
+    }
+
+    .description hr {
+      border: 0;
+      margin-bottom: 15px;
+    }
+
+    .description p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .img-card {
+    height: unset;
+    width: 100%;
+    min-width: unset;
+  }
 }

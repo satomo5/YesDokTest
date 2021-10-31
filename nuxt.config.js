@@ -53,6 +53,10 @@ export default {
     manifest: {
       lang: 'en',
     },
+    icon: false,
+    workbox: {
+      enabled: true,
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

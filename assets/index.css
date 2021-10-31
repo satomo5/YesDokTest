@@ -56,14 +56,16 @@
 }
 
 @media screen and (max-width: 768px) {
-   .img-card {
-      min-width: 120px;
-      width: 120px;
-      height: 120px;
-   }
-
    .card-title {
       font-size: 16px;
       line-height: 22px;
+   }
+}
+
+@media screen and (max-width: 640px) {
+   .img-card {
+      height: unset;
+      width: 100%;
+      min-width: unset;
    }
 }
